@@ -1,6 +1,6 @@
 {
   "name": "ttl-counter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TTL counter",
   "main": "index.js",
   "scripts": {
