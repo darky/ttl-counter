@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "TTL counter",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest"
