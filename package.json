@@ -13,6 +13,10 @@
     "event",
     "count"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/darky/ttl-counter.git"
+  },
   "author": "Vladislav Botvin",
   "license": "MIT",
   "devDependencies": {
