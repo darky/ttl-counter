@@ -4,24 +4,16 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        node: [ '10', '12', '13' ]
+    name: Node ${{ matrix.node }} tests
     steps:
-    - uses: actions/setup-node@v1.1.0
-      with:
-        version: 10.x
-    - name: Tests on Node.js 10
-      run: npm install && npm run test
-
-    - uses: actions/setup-node@v1.1.0
-      with:
-        version: 12.x
-    - name: Tests on Node.js 12
-      run: npm install && npm run test
-
-    - uses: actions/setup-node@v1.1.0
-      with:
-        version: 13.x
-    - name: Tests on Node.js 13
-      run: npm install && npm run test
+      - uses: actions/checkout@v1
+      - name: Tests
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm install
+      - run: npm test
